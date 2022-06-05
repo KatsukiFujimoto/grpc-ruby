@@ -1,0 +1,23 @@
+// protoファイルの記述に使用する文法を指定
+syntax = "proto3";
+
+// パッケージ名を指定
+package example;
+
+// 計算機のサービスを定義
+service Calc {
+  // Inputを引数に渡すとOutputを返すsolveというメソッドを定義
+  rpc Solve (Input) returns (Output) {}
+}
+
+// クライアントから渡す計算式
+message Input {
+  // questionという名前で文字列を定義
+  string question = 1;
+}
+
+// サーバーからの戻り値
+message Output {
+  // answerという名前で数値を定義
+  int32 answer = 1;
+}
